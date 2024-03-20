@@ -23,7 +23,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="w-full bg-black h-28 fixed top-0 left-0">
+            <nav className="w-full z-50 bg-black h-28 fixed top-0 left-0">
                 <div className="md:h-full flex items-center justify-around m-5 md:m-0">
                 <span className="text-2xl font-bold">Reco<span className="text-2xl font-bold text-yellow-300">Bee</span></span>
                 <div className="lg:mx-20 hidden md:block">
@@ -47,11 +47,11 @@ export default function Navbar() {
                         id="sm-search" type="search"
                         value={movie}
                         onChange={(e) => setMovie(e.target.value)}
-                        className="p-1 rounded-sm outline-none"
+                        className="p-1 rounded-sm outline-none text-black"
                         placeholder="Search Movies by Name, Year, Genre" />
                     <button onClick={handleClick}
                         htmlFor="sm-search"
-                        className="bg-yellow-300 text-black py-1 px-2 ml-2 rounded-md">Search</button>
+                        className="bg-yellow-300 outline-none text-black py-1 px-2 ml-2 rounded-md">Search</button>
                 </div>
             </nav>
         </>
