@@ -7,13 +7,13 @@ import Layout from './Layout';
 import Title from './components/Title';
 import { movieLoader } from './components/movieLoader.jsx'
 
-const title = localStorage.getItem('movie')
+const contentType = localStorage.getItem('type')
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
       <Route path='' element={<Layout/>} />
-      <Route loader={movieLoader} path={`/${title}`} element={<Title/>} />
+      <Route loader={movieLoader} path={`/${contentType}`} element={<Title/>} />
     </Route>
   )
 )

@@ -33,9 +33,7 @@ export default function Drama() {
     }, [type])
 
     if (loading) {
-        return <div className="h-screen flex justify-center items-center text-3xl font-medium">
-                    Loading...
-                </div>
+        return <div></div>
     }
 
     return (

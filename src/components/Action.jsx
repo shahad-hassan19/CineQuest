@@ -7,10 +7,6 @@ export default function Action() {
     const [loading, setLoading] = useState(true);
     const {type} = useType()
 
-    const handleClick = (movieTitle) => {
-        console.log(movieTitle)
-    }
-
     useEffect(() => {
         setLoading(true);
         const fetchData = async() => {
@@ -37,9 +33,7 @@ export default function Action() {
     }, [type])
 
     if (loading) {
-        return <div className="h-screen flex justify-center items-center text-3xl font-medium">
-                    Loading...
-                </div>
+        return <div></div>
     }
 
     return (
@@ -47,7 +41,7 @@ export default function Action() {
             <h1 className="p-5">Action</h1>
             <div className="flex flex-col md:flex-wrap md:flex-row items-center justify-around">
                 {Array.isArray(data) && data.map((movie, index) => (
-                    <div onClick={handleClick(movie.Title)} key={index} className="shadow-sm shadow-white">
+                    <div key={index} className="shadow-sm shadow-white">
                         <img src={movie?.Poster} className="w-40 h-60 rounded-sm" />
                         <div className="flex flex-col items-center">
                             <h3 className="font-extrabold">{movie?.Title}</h3>

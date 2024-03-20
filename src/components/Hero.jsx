@@ -7,10 +7,6 @@ function Hero() {
     const [loading, setLoading] = useState(true);
     const {type} = useType()
 
-    const handleClick = () => {
-        localStorage.setItem('movie')
-    }
-
     useEffect(() => {
         setLoading(true);
         const fetchData = async() => {
@@ -50,7 +46,7 @@ function Hero() {
                     <div key={index} className="shadow-sm shadow-white">
                         <img src={movie?.Poster} className="w-40 h-60 rounded-sm" />
                         <div className="flex flex-col items-center">
-                            <h3 onClick={handleClick} className="font-extrabold">{movie?.Title}</h3>
+                            <h3 className="font-extrabold">{movie?.Title}</h3>
                             <h5 className="text-xs">{movie?.Year}</h5>
                         </div>
                     </div>

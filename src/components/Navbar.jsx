@@ -7,20 +7,17 @@ export default function Navbar() {
     const [movie, setMovie] = useState('')
     const { type, findMovie, findSeries } = useType()
     const navigate = useNavigate()
-    const title = localStorage.getItem('movie')
+    const contentType = localStorage.getItem('type')
 
-    const handleClick = (e) => {
+    const handleClick = async(e) => {
         e.preventDefault()
-        const fetchData = async() => {
             try {
                 const response = await axios.get(`https://www.omdbapi.com/?t=${movie}&type=${type}&apikey=e586f3d5`)
                 localStorage.setItem('movie', response.data.Title)
             } catch (error) {
                 console.log(error)
             }
-        }
-        fetchData()
-        navigate(`/${title}`)
+        navigate(`/${contentType}`)
     }
 
 
@@ -38,11 +35,11 @@ export default function Navbar() {
                         placeholder="Search Movies by Name, Year, Genre" />
                     <button onClick={handleClick}
                         htmlFor="search"
-                        className="bg-yellow-300 text-black py-1 px-2 ml-2 rounded-md">Search</button>
+                        className="bg-yellow-300 text-black py-1 px-2 ml-2 outline-none rounded-md">Search</button>
                 </div>
-                <div>
-                    <button onClick={() => {findMovie()}} className="bg-yellow-300 text-black py-1 px-2 ml-2 rounded-md">Movies</button>
-                    <button onClick={() => {findSeries()}} className="bg-yellow-300 text-black py-1 px-2 ml-2 rounded-md">Series</button>
+                <div className="flex text-white">
+                    <span onClick={() => {findMovie()}} className={`movies-btn block py-2 pr-4 pl-3 font-semibold text-yellow-300 text-xl mr-5 cursor-pointer`}>Movies</span>
+                    <span onClick={() => {findSeries()}} className={`series-btn block py-2 pr-4 pl-3 font-semibold text-xl mr-5 cursor-pointer`}>Series</span>
                 </div>
                 </div>
                 <div className="md:hidden flex items-center justify-center m-5">
