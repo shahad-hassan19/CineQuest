@@ -36,7 +36,7 @@ function Hero() {
     }, [type])
 
     if (loading) {
-        return <div className="mt-28 h-screen flex items-center justify-center loader">
+        return <div className="h-screen flex items-center justify-center loader">
                     <span className="bar"></span>
                     <span className="bar"></span>
                     <span className="bar"></span>

@@ -13,6 +13,7 @@ export default function Navbar() {
         e.preventDefault()
             try {
                 const response = await axios.get(`https://www.omdbapi.com/?t=${movie}&type=${type}&apikey=e586f3d5`)
+                localStorage.removeItem('movie')
                 localStorage.setItem('movie', response.data.Title)
             } catch (error) {
                 console.log(error)
@@ -23,7 +24,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="w-full z-50 bg-black h-28 fixed top-0 left-0">
+            <nav className="w-full z-50 bg-black min-h-fit md:h-28 fixed top-0 left-0 shadow-sm shadow-white">
                 <div className="md:h-full flex items-center justify-around m-5 md:m-0">
                 <span className="text-2xl font-bold">Reco<span className="text-2xl font-bold text-yellow-300">Bee</span></span>
                 <div className="lg:mx-20 hidden md:block">
@@ -38,8 +39,8 @@ export default function Navbar() {
                         className="bg-yellow-300 text-black py-1 px-2 ml-2 outline-none rounded-md">Search</button>
                 </div>
                 <div className="flex text-white">
-                    <span onClick={() => {findMovie()}} className={`movies-btn block py-2 pr-4 pl-3 font-semibold text-yellow-300 text-xl mr-5 cursor-pointer`}>Movies</span>
-                    <span onClick={() => {findSeries()}} className={`series-btn block py-2 pr-4 pl-3 font-semibold text-xl mr-5 cursor-pointer`}>Series</span>
+                    <span onClick={() => {findMovie()}} className={`movies-btn block py-2 sm:pr-2 md:pr-4 font-semibold text-yellow-300 text-xl  cursor-pointer`}>Movies</span>
+                    <span onClick={() => {findSeries()}} className={`series-btn block py-2 pl-2 font-semibold text-xl cursor-pointer`}>Series</span>
                 </div>
                 </div>
                 <div className="md:hidden flex items-center justify-center m-5">

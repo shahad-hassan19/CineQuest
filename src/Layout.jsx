@@ -4,7 +4,7 @@ import Drama from './components/Drama'
 
 function Layout() {
     return (
-        <div>
+        <div className="mt-36">
             <Hero/>
             <Action/>
             <Drama/>
