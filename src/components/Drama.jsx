@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import useType from "../context/useType";
+import './CSS/Card.css'
 
 export default function Drama() {
     const [data, setData] = useState([]);
@@ -41,11 +42,13 @@ export default function Drama() {
             <h1 className="p-5">Drama</h1>
             <div className="flex flex-col md:flex-wrap md:flex-row items-center justify-around">
                 {Array.isArray(data) && data.map((movie, index) => (
-                    <div key={index} className="shadow-sm shadow-white">
+                    <div key={index} className="card">
+                        <div className="card2">
                         <img src={movie?.Poster} className="w-40 h-60 rounded-sm" />
                         <div className="flex flex-col items-center">
                             <h3 className="font-extrabold">{movie?.Title}</h3>
                             <h5 className="text-xs">{movie?.Year}</h5>
+                        </div>
                         </div>
                     </div>
                 ))}

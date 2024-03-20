@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router"
-
+import './CSS/Loader.css'
 
 export default function Title() {
 
@@ -38,8 +38,11 @@ export default function Title() {
                     </div>
                 </div>
                 ) : (
-                    <div>
-                    </div>
+                    <div className="loader">
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </div>
                 )}
     </>
     )

@@ -1,11 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import useType from "../context/useType";
+import './CSS/Card.css'
+import './CSS/Loader.css'
 
 function Hero() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const {type} = useType()
+
 
     useEffect(() => {
         setLoading(true);
@@ -33,8 +36,10 @@ function Hero() {
     }, [type])
 
     if (loading) {
-        return <div className="h-screen flex justify-center items-center text-3xl font-medium">
-                    Loading...
+        return <div className="mt-28 h-screen flex items-center justify-center loader">
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
                 </div>
     }
 
@@ -43,11 +48,13 @@ function Hero() {
             <h1 className="p-5">Trending on <span>Reco<span className="text-yellow-300">Bee</span></span></h1>
             <div className="flex flex-col md:flex-wrap md:flex-row items-center justify-around">
                 {Array.isArray(data) && data.map((movie, index) => (
-                    <div key={index} className="shadow-sm shadow-white">
-                        <img src={movie?.Poster} className="w-40 h-60 rounded-sm" />
-                        <div className="flex flex-col items-center">
-                            <h3 className="font-extrabold">{movie?.Title}</h3>
-                            <h5 className="text-xs">{movie?.Year}</h5>
+                    <div key={index} className="card">
+                        <div className="card2">
+                            <img src={movie?.Poster} className="w-40 h-60 rounded-sm" />
+                            <div className="flex flex-col items-center">
+                                <h3 className="font-extrabold">{movie?.Title}</h3>
+                                <h5 className="text-xs">{movie?.Year}</h5>
+                            </div>
                         </div>
                     </div>
                 ))}
