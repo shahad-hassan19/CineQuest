@@ -10,7 +10,8 @@ export default function Navbar() {
     const navigate = useNavigate()
     const contentType = localStorage.getItem('type')
 
-    const handleClick = async(e) => {
+    useEffect(() => {
+        const handleClick = async(e) => {
         e.preventDefault()
         if(contentType === 'movie'){
             try {
@@ -32,6 +33,7 @@ export default function Navbar() {
         navigate('/search-series')
         }
     }
+    }, [type])
 
 
     return (
