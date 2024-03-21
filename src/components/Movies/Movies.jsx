@@ -4,7 +4,7 @@ import Latest from "./Latest";
 
 export default function Movies() {
     return (
-        <div>
+        <div className="mt-20">
             <Hero/>
             <Popular/>
             <Latest/>
