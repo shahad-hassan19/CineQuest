@@ -17,7 +17,8 @@ import SeriesDetail from './components/Series/SeriesDetail.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<App/>}>
+    <Route history={hashHistory} path='/' element={<App/>}>
+      <Route path='' element={<Movies/>} />   
       <Route path='/movie/' element={<Movies/>} />    
       <Route path='/series/' element={<Series/>} />
       <Route path='/search-movie/' element={<SearchMovie/>} />
