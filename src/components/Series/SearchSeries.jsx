@@ -14,7 +14,7 @@ export default function SearchSeries() {
 
     useEffect(() => {
         const fetchData = async() => {
-            const title = localStorage.getItem('target')
+            const title = localStorage.getItem('series')
             try {
                 const url = `https://api.themoviedb.org/3/search/tv?query=${title}&include_adult=false&language=en-US&page=1`;
                 const options = {
