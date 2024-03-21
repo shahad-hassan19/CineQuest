@@ -4,7 +4,7 @@ import Popular from './Popular';
 
 export default function Series() {
     return (
-        <div>
+        <div className="mt-20">
             <Hero/>
             <Popular/>
             <TopRated/>
