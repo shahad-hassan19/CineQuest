@@ -8,10 +8,13 @@ export default function Navbar() {
     const [target, setTarget] = useState('')
     const { type, findMovie, findSeries } = useType()
     const navigate = useNavigate()
-    const contentType = localStorage.getItem('type')
-
+    
     useEffect(() => {
-        const handleClick = async(e) => {
+       const contentType = localStorage.getItem('type')
+    }
+    }, [type])
+
+     const handleClick = async(e) => {
         e.preventDefault()
         if(contentType === 'movie'){
             try {
@@ -32,9 +35,6 @@ export default function Navbar() {
             }
         navigate('/search-series')
         }
-    }
-    }, [type])
-
 
     return (
         <>
