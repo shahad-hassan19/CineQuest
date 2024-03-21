@@ -7,10 +7,12 @@ import { Link } from "react-router-dom"
 export default function Navbar() {
     const [target, setTarget] = useState('')
     const { type, findMovie, findSeries } = useType()
+    const [contentType, setContentType] = useState(null)
     const navigate = useNavigate()
     
     useEffect(() => {
-       const contentType = localStorage.getItem('type')
+        const storedType = localStorage.getItem('type')
+        setContentType(storedType)
     }, [type])
 
      const handleClick = async(e) => {
