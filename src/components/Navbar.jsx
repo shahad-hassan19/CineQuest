@@ -11,7 +11,6 @@ export default function Navbar() {
     
     useEffect(() => {
        const contentType = localStorage.getItem('type')
-    }
     }, [type])
 
      const handleClick = async(e) => {
@@ -35,6 +34,7 @@ export default function Navbar() {
             }
         navigate('/search-series')
         }
+     }
 
     return (
         <>
