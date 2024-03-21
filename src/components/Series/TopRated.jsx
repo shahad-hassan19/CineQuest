@@ -11,8 +11,8 @@ export default function TopRated() {
     const navigate = useNavigate()
 
     const handleClick = (e) => {
-        localStorage.setItem('SeriesId',  e.currentTarget.getAttribute('id'))
-        navigate('/movie-details')
+        localStorage.setItem('seriesId',  e.currentTarget.getAttribute('id'))
+        navigate('/series-details')
     }
 
     useEffect(() => {
