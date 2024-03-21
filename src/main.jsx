@@ -18,14 +18,12 @@ import SeriesDetail from './components/Series/SeriesDetail.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
-      <Route path='' element={<Movies/>}>
-        <Route path='/movie' element={<Movies/>} />
-      </Route>
-      <Route path='/series' element={<Series/>} />
-      <Route path='/search-movie' element={<SearchMovie/>} />
-      <Route path='/search-series' element={<SearchSeries/>} />
-      <Route loader={movieLoader} path='/movie-details' element={<MovieDetail/>} />
-      <Route loader={seriesLoader} path='/series-details' element={<SeriesDetail/>} />
+      <Route path='/movie/' element={<Movies/>} />    
+      <Route path='/series/' element={<Series/>} />
+      <Route path='/search-movie/' element={<SearchMovie/>} />
+      <Route path='/search-series/' element={<SearchSeries/>} />
+      <Route loader={movieLoader} path='/movie-details/' element={<MovieDetail/>} />
+      <Route loader={seriesLoader} path='/series-details/' element={<SeriesDetail/>} />
     </Route>
   )
 )
