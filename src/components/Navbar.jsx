@@ -20,8 +20,8 @@ export default function Navbar() {
         if(contentType === 'movie'){
             try {
                 const response = await axios.get(`https://www.omdbapi.com/?t=${target}&apikey=e586f3d5`)
-                localStorage.removeItem('target')
-                localStorage.setItem('target', response.data.Title)
+                localStorage.removeItem('movie')
+                localStorage.setItem('movie', response.data.Title)
             } catch (error) {
                 console.log(error)
             }
@@ -29,8 +29,8 @@ export default function Navbar() {
         } else if (contentType === 'series'){
             try {
                 const response = await axios.get(`https://api.themoviedb.org/3/search/tv?query=${target}&include_adult=false&language=en-US&page=1`)
-                localStorage.removeItem('target')
-                localStorage.setItem('target', response.data.Title)
+                localStorage.removeItem('series')
+                localStorage.setItem('series', response.data.name)
             } catch (error) {
                 console.log(error)
             }
