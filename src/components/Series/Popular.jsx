@@ -12,8 +12,8 @@ export default function Popular() {
     const navigate = useNavigate()
 
     const handleClick = (e) => {
-        localStorage.setItem('movieId',  e.currentTarget.getAttribute('id'))
-        navigate('/movie-details')
+        localStorage.setItem('seriesId',  e.currentTarget.getAttribute('id'))
+        navigate('/series-details')
     }
 
     useEffect(() => {
