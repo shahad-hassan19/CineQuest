@@ -12,7 +12,7 @@ export default function Hero() {
     const navigate = useNavigate()
 
     const handleClick = (e) => {
-        localStorage.setItem('SeriesId',  e.currentTarget.getAttribute('id'))
+        localStorage.setItem('seriesId',  e.currentTarget.getAttribute('id'))
         navigate('/movie-details')
     }
 
