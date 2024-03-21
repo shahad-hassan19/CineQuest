@@ -14,7 +14,7 @@ export default function SearchMovie() {
 
     useEffect(() => {
         const fetchData = async() => {
-            const title = localStorage.getItem('movie')
+            const title = localStorage.getItem('target')
             try {
                 const url = `https://api.themoviedb.org/3/search/movie?query=${title}&include_adult=false&language=en-US&page=1`;
                 const options = {
