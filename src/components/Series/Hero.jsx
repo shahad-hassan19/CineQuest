@@ -61,7 +61,7 @@ export default function Hero() {
                             <div  onClick={handleClick} id={`${item.id}`}  className="card2">
                                 <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} className="w-40 h-60 rounded-sm" />
                                 <div className="flex flex-col items-center">
-                                    <h3 className="font-extrabold cursor-pointer">{item.name}</h3>
+                                    <h3 className="font-extrabold cursor-pointer w-36 whitespace-nowrap text-center overflow-hidden overflow-ellipsis">{item.name}</h3>
                                 </div>
                             </div>
                         </div>
