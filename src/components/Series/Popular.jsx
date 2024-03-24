@@ -47,7 +47,7 @@ export default function Popular() {
 
     return (
         <div className="mt-10 px-5">
-            <h1 className="p-5">Popular</h1>
+            <h1 className="p-5">Popular Series</h1>
             <div className="flex flex-col md:flex-wrap md:flex-row items-center justify-around">
                 {
                     Array.isArray(data) && data[0].slice(0, 6).map((item, index) => (
