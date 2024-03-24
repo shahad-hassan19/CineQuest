@@ -39,7 +39,7 @@ export default function Navbar() {
         <>
             <nav className="w-full z-50 bg-black min-h-fit md:h-28 fixed top-0 left-0 shadow-sm shadow-white">
                 <div className="md:h-full flex items-center justify-around m-5 md:m-0">
-                    <Link to='/' className="text-2xl font-bold">Reco<span className="text-2xl font-bold text-yellow-300">Bee</span></Link>
+                    <Link to='/' className="text-2xl font-bold">Cine<span className="text-2xl font-bold text-yellow-300">Quest</span></Link>
                     <div className="lg:mx-20 hidden md:block">
                         <input
                             id="search" type="search"
