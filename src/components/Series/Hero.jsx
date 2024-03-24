@@ -53,7 +53,7 @@ export default function Hero() {
 
     return (
         <div className="mt-28 px-5">
-            <h1 className="p-5">Trending on <span>Reco<span className="text-yellow-300">Bee</span></span></h1>
+            <h1 className="p-5">Trending on <span>Cine<span className="text-yellow-300">Quest</span></span></h1>
             <div className="flex flex-col md:flex-wrap md:flex-row items-center justify-around">
                 {
                     Array.isArray(data) && data[0].slice(0, 6).map((item, index) => (
