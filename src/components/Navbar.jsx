@@ -62,7 +62,7 @@ export default function Navbar() {
                         value={target}
                         onChange={(e) => setTarget(e.target.value)}
                         className="p-1 rounded-sm outline-none text-black"
-                        placeholder="Search Movies by Name, Year, Genre" />
+                        placeholder="Search Movies/Series by Name" />
                     <button onClick={handleClick}
                         htmlFor="sm-search"
                         className="bg-yellow-300 outline-none text-black py-1 px-2 ml-2 rounded-md">Search</button>
