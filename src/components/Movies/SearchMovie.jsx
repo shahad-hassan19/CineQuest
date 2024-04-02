@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router"
 import axios from "axios"
-import '../CSS/Card.css'
 import { useEffect, useState } from "react"
+import conf from '../../conf/conf'
+import '../CSS/Card.css'
 
 export default function SearchMovie() {
     const navigate = useNavigate()
@@ -21,7 +22,7 @@ export default function SearchMovie() {
                     method: 'GET',
                     headers: {
                         accept: 'application/json',
-                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NDEzNzUxODJlN2ZmNDc5MTA0ODcxODAxMzMzZDI2YyIsInN1YiI6IjY1ZmFiMmIyYTE5OWE2MDE0OWRkODljMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jryhB0VfxHPTt1Ic3Bx0otTS0lUsGq1zruj1rJi8tGs'
+                        Authorization: `Bearer ${conf.apiKey}`
                     }
                 };
                 const response = await axios.get(url, options)

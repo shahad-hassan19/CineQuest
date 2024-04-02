@@ -1,9 +1,7 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
 import App from './App.jsx'
-import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-
 import Movies from './components/Movies/Movies';
 import Series from './components/Series/Series.jsx'
 import SearchMovie from './components/Movies/SearchMovie.jsx'
@@ -12,15 +10,12 @@ import { movieLoader } from './components/Movies/movieLoader.js'
 import { seriesLoader } from './components/Series/seriesLoader.js'
 import SearchSeries from './components/Series/SearchSeries.jsx'
 import SeriesDetail from './components/Series/SeriesDetail.jsx'
-
-
+import './index.css'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App/>}>
-      <Route path='' element={<Movies/>}>
         <Route path='/movie' element={<Movies/>} />
-      </Route>
       <Route path='/series' element={<Series/>} />
       <Route path='/search-movie' element={<SearchMovie/>} />
       <Route path='/search-series' element={<SearchSeries/>} />
@@ -29,6 +24,7 @@ const router = createBrowserRouter(
     </Route>
   )
 )
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

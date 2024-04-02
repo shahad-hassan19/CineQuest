@@ -1,5 +1,4 @@
 import { useState } from "react"
-import axios from "axios"
 import useType from "../context/useType"
 import { useNavigate } from "react-router"
 import { Link } from "react-router-dom"
@@ -14,18 +13,16 @@ export default function Navbar() {
         e.preventDefault()
         if(contentType === 'movie'){
             try {
-                const response = await axios.get(`https://www.omdbapi.com/?t=${target}&apikey=e586f3d5`)
                 localStorage.removeItem('movie')
-                localStorage.setItem('movie', response.data.Title)
+                localStorage.setItem('movie', target)
             } catch (error) {
                 console.log(error)
             }
             navigate('/search-movie')
         } else if (contentType === 'series'){
             try {
-                const response = await axios.get(`https://api.themoviedb.org/3/search/tv?query=${target}&include_adult=false&language=en-US&page=1`)
                 localStorage.removeItem('series')
-                localStorage.setItem('series', response.data.Title)
+                localStorage.setItem('series', target)
             } catch (error) {
                 console.log(error)
             }

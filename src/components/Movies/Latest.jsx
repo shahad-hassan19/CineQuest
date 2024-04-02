@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import useType from "../../context/useType";
 import { useNavigate } from "react-router";
+import conf from '../../conf/conf'
 import '../CSS/Card.css'
 
 export default function Latest() {
@@ -25,7 +26,7 @@ export default function Latest() {
                     method: 'GET',
                     headers: {
                         accept: 'application/json',
-                        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NDEzNzUxODJlN2ZmNDc5MTA0ODcxODAxMzMzZDI2YyIsInN1YiI6IjY1ZmFiMmIyYTE5OWE2MDE0OWRkODljMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jryhB0VfxHPTt1Ic3Bx0otTS0lUsGq1zruj1rJi8tGs'
+                        Authorization: `Bearer ${conf.apiKey}`
                     }
                 }
                 const response = await axios.get(url, options)
@@ -39,7 +40,7 @@ export default function Latest() {
         fetchData()
     }, [type])
 
-    if (loading) {
+    if (loading || data.length === 0) {
         return <div></div>
     }
 
